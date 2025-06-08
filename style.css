@@ -1,0 +1,465 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* 以下開始程式碼 */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap");
+
+:root {
+  /* 🟦 色彩系統 */
+  --color-primary: #1b3cff; /* 主色（h2小標文字） */
+  --color-black: #000000; /* 主文字 */
+  --color-gray: #888888; /* 說明文字 / icon 邊框 */
+  --color-light-gray: #d9d9d9; /* 區塊底線 / 分隔線 */
+  --color-bg: #fbfbfb; /* 淺底背景區 */
+  --color-white: #ffffff; /* 通用白色 */
+
+  /* 🔠 字體系統 */
+  --font-size-sm: 0.875rem; /* 說明文字（14px） */
+  --font-size-base: 1rem; /* 正文文字（16px） */
+  --font-size-md: 1.25rem; /* 小標題（20px） */
+  --font-size-lg: 1.5rem; /* 主標題（24px） */
+
+  /* 📏 間距系統（Spacing） */
+  --space-xs: 0.5rem; /* 8px */
+  --space-sm: 1rem; /* 16px */
+  --space-md: 1.5rem; /* 24px */
+  --space-lg: 2rem; /* 32px */
+  --space-xl: 2.5rem; /* 40px */
+  --space-2xl: 5rem; /* 80px */
+
+  /* 📐 版面與寬度 */
+  --container-width: 60rem; /* 960px 主要內容寬度 */
+  --wrap-max-width: 110rem; /* 1760px 整體最大寬度 */
+  --side-padding: 5rem; /* 區塊左右 padding，桌機版 */
+  --side-padding-sm: 1.25rem; /* 手機版 padding */
+
+  /* 🟩 元件樣式 */
+  --radius: 0.5rem; /* 元件圓角 */
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.05); /* 適合圖片卡片陰影 */
+}
+
+/* ----> 基本設定與排版 */
+body {
+  /* width: 1920px;這樣會鎖死寬度 */
+  max-width: 100%;
+  margin: 0 auto;
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  font-family: "Noto Sans TC", sans-serif;
+  background-color: var(--color-white);
+}
+/* ----> 基本設定與排版end */
+
+/* ----> 導航排版 */
+.header {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-lg);
+  padding: var(--space-md);
+}
+.header p {
+  color: #000;
+
+  /* .fs-3 text - B */
+  font-family: "Noto Sans TC";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 42px */
+}
+/* ----> 導航排版end */
+
+/* ---->Intro 區塊（圖片＋標題） */
+.intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xl);
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.intro_img {
+  width: 50%;
+  height: 400px;
+  background-image: url("https://github.com/hexschool/2022-web-layout-training/blob/main/2025-web-camp/desktop/index/photo5.png?raw=true");
+  background-size: contain;
+  background-position: center; /* ✅ 圖片居中裁切 */
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+}
+.intro_text {
+  width: 50%; /* 或讓它跟圖片各占一半 */
+  /* padding-left: 5rem;  */
+}
+
+.intro_text p {
+  color: #000;
+
+  /* fs-6 text - M */
+  font-family: "Noto Sans TC";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 24px */
+}
+
+.intro_text .title {
+  display: flex;
+  align-items: baseline; /* ✅ 關鍵：基線對齊 */
+  gap: var(--space-xs);
+}
+.intro_text h2 {
+  color: #0027d5;
+
+  font-family: "Noto Sans TC";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+}
+.intro_text a {
+  color: #fff;
+
+  /* .fs-6 text - B */
+  font-family: "Noto Sans TC";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 24px */
+  background: #0027d5;
+  border-radius: 40px;
+  padding: 6px 12px;
+  display: inline-block;
+}
+.title {
+  display: flex;
+  align-items: center;
+}
+.intro_text h1 {
+  color: #000;
+
+  /* .fs-3 text - B */
+  font-family: "Noto Sans TC";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 42px */
+}
+
+/* ---->Intro 區塊（圖片＋標題）end */
+.wrap {
+  max-width: 802px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 80px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+.wrap section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.wrap img {
+  width: 100%;
+  max-width: 100%;
+  margin-top: var(--space-sm);
+}
+.wrap h2 {
+  color: var(--primary, #0027d5);
+  /* .fs-3 text - B */
+  font-family: "Noto Sans TC";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 42px */
+}
+
+.wrap h3 {
+  color: #000;
+
+  /* .fs-5 text - B */
+  font-family: "Noto Sans TC";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 30px */
+}
+
+.wrap p {
+  color: #000;
+
+  /* fs-6 text - M */
+  font-family: "Noto Sans TC";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 24px */
+}
+.wrap ul {
+  padding-left: 1.2em;
+  margin-bottom: var(--space-sm);
+}
+.wrap ul li {
+  list-style: disc;
+  line-height: 1.8;
+  color: var(--color-black);
+}
+.tip-box,
+.quote {
+  background-color: #f2f2f2;
+  border-radius: 0.5rem;
+  padding: var(--space-sm);
+  font-size: var(--font-size-sm);
+}
+
+.page {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--space-lg);
+  list-style: none;
+}
+
+.page button {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-gray);
+  border-radius: 24px;
+  background-color: #fff;
+  cursor: pointer;
+  list-style: none;
+}
+
+.footer {
+  text-align: center;
+  font-size: 0.75rem;
+  padding: var(--space-sm);
+  color: var(--color-gray);
+}
+
+.infro {
+  max-width: 802px; /* 與.wrap 相同寬度 */
+  margin: 0 auto;
+  padding: 0 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.mail {
+  font-size: 16px;
+  color: var(--color-black);
+}
+
+.link a img {
+  width: 24px;
+  height: 24px;
+  margin-right: var(--space-xs);
+}
+
+/* ----->RWD */
+@media (max-width: 768px) {
+  .intro {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm);
+  }
+
+  .intro_text {
+    width: 100%;
+  }
+
+  .intro_img {
+    width: 100%;
+    height: 200px; /* 建議固定高度，避免背景撐太高 */
+    background-size: cover; /* 改為 cover 才會填滿高度 */
+    background-position: center;
+    margin-bottom: var(--space-sm); /* 增加圖片與文字的間距 */
+  }
+  .intro_text h1 {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  .intro_text h2 {
+    font-size: 16px;
+  }
+
+  .intro_text a {
+    font-size: 14px;
+    padding: 4px 8px;
+  }
+
+  .wrap {
+    width: 100%;
+    padding: 0 var(--side-padding-sm) 80px;
+  }
+
+  .wrap h2 {
+    font-size: 20px;
+  }
+
+  .wrap h3 {
+    font-size: 16px;
+  }
+
+  .wrap p,
+  .wrap ul li {
+    font-size: 14px;
+  }
+
+  .page {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .infro {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 var(--side-padding-sm);
+  }
+
+  .link {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-xs);
+  }
+
+  .link a img {
+    margin: 0;
+  }
+}
